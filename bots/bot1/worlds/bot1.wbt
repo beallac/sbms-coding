@@ -1,0 +1,19 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.999658919630556 -0.026090762721888 0.0011473899336197626 0.6546062157876198
+  position -0.016410679414854586 0.4505253696176579 0.5489675353595745
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.25 0.25
+  wallHeight 0.05
+}
+Khepera1 {
+  controller "khepera_bus"
+}
