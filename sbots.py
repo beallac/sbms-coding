@@ -13,5 +13,6 @@ def motorPair(left, right):
     b = bytes(m, 'utf-8')
     sock.sendall(b)
 
+    # Add sleep here
     time.sleep(0.05)
 
