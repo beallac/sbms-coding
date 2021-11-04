@@ -1,0 +1,157 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.9999411512432466 0.002874496677135828 0.010460942557138305 0.7043757491902846
+  position -0.13863044181475495 0.7061242564863213 0.9054451718316473
+  follow "Khepera"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.25 0.25
+  wallHeight 0.05
+}
+Khepera1 {
+  controller "motors_only"
+}
+WoodenBox {
+  translation 0.13 0.025 -0.13
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.13 0.025 0
+  name "wooden box(11)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.13 0.025 0.12
+  name "wooden box(21)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.13 0.025 0.24
+  name "wooden box(22)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.13 0.025 -0.26
+  name "wooden box(1)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.13 0.025 -0.38
+  name "wooden box(2)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.01 0.025 -0.38
+  name "wooden box(3)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.12 0.025 -0.38
+  name "wooden box(4)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.12 0.025 -0.13
+  name "wooden box(6)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.12 0.025 0
+  name "wooden box(10)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.12 0.025 0.12
+  name "wooden box(18)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.25 0.025 -0.38
+  name "wooden box(5)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 -0.38
+  name "wooden box(7)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 -0.26
+  name "wooden box(8)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 -0.14
+  name "wooden box(9)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 -0.02
+  name "wooden box(12)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 0.11
+  name "wooden box(13)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 0.24
+  name "wooden box(14)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.38 0.025 0.37
+  name "wooden box(15)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.25 0.025 0.37
+  name "wooden box(16)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation -0.13 0.025 0.37
+  name "wooden box(17)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0 0.025 0.37
+  name "wooden box(19)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}
+WoodenBox {
+  translation 0.13 0.025 0.37
+  name "wooden box(20)"
+  size 0.125 0.05 0.125
+  mass 0.02
+}

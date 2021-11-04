@@ -35,6 +35,9 @@ rightMotor = robot.getDevice('right wheel motor')
 leftMotor.setPosition(float('inf'))
 rightMotor.setPosition(float('inf'))
 
+#rLED = robot.getDevice('led0')
+#rLED.set(1)
+
 # set up the motor speeds at 10% of the MAX_SPEED.
 #leftMotor.setVelocity(0.1 * MAX_SPEED)
 #rightMotor.setVelocity(0.1 * MAX_SPEED)
