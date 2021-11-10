@@ -2,7 +2,7 @@
 
 # You may need to import some classes of the controller module. Ex:
 #  from controller import Robot, Motor, DistanceSensor
-from controller import Robot, Motor
+from controller import Robot, Motor, DistanceSensor
 
 import socket, select
 
@@ -35,6 +35,32 @@ rightMotor = robot.getDevice('right wheel motor')
 leftMotor.setPosition(float('inf'))
 rightMotor.setPosition(float('inf'))
 
+d0 = robot.getDevice('ds0')
+d0.enable(TIME_STEP)
+
+d1 = robot.getDevice('ds1')
+d1.enable(TIME_STEP)
+
+d2 = robot.getDevice('ds2')
+d2.enable(TIME_STEP)
+
+d3 = robot.getDevice('ds3')
+d3.enable(TIME_STEP)
+
+d4 = robot.getDevice('ds4')
+d4.enable(TIME_STEP)
+
+d5 = robot.getDevice('ds5')
+d5.enable(TIME_STEP)
+
+d6 = robot.getDevice('ds6')
+d6.enable(TIME_STEP)
+
+d7 = robot.getDevice('ds7')
+d7.enable(TIME_STEP)
+
+sensors = [d0, d1, d2, d3, d4, d5, d6, d7]
+
 #rLED = robot.getDevice('led0')
 #rLED.set(1)
 
@@ -52,6 +78,13 @@ read_list = [server_socket]
 
 while robot.step(TIME_STEP) != -1:
 
+    m = ""
+    for sensor in sensors:
+        reading = sensor.getValue()
+        m += ( "{:.2f} ".format(reading) )
+    print(m)
+    # print('d: ', d0.getValue(), d1.getValue(), d2.getValue(), d3.getValue(), d4.getValue(), d5.getValue(), d6.getValue(), d7.getValue() )
+
     readable, writable, errored = select.select(read_list, [], [], .01)
     for s in readable:
         if s is server_socket:
@@ -62,16 +95,35 @@ while robot.step(TIME_STEP) != -1:
             data = s.recv(1024)
             if data:
                 print(data)
-                s = data.split()
+                sp = data.split()
 
-                if s[0] == b'D':
+                if sp[0] == b'D' and len(sp) == 3:
                     print('setting speed')
 
                     #leftMotor.setVelocity(0.1 * MAX_SPEED)
                     #rightMotor.setVelocity(0.1 * MAX_SPEED)
-
-                    leftMotor.setVelocity(float(s[1]))
-                    rightMotor.setVelocity(float(s[2]))
+                    
+                    try:
+                        leftM = float(sp[1])
+                        rightM = float(sp[2])
+                        
+                        leftMotor.setVelocity(leftM)
+                        rightMotor.setVelocity(rightM)
+                        
+                    except:
+                        pass
+                    
+                if sp[0] == b'S':
+                
+                    m = 'S '
+                    
+                    for sensor in sensors:
+                        reading = sensor.getValue()
+                        m += ( "{:.2f} ".format(reading) )
+                        b = bytes(m, 'utf-8')
+                    s.send(b)
+                  
+                    
             else:
                 s.close()
                 read_list.remove(s)
