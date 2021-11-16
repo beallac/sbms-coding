@@ -32,7 +32,7 @@ def pollSensors():
     if len(s) != 9:
         return 0
 
-    return [ float(s[1]), float(s[2]), float(s[3]), float(s[4]), float(s[5]), float(s[6]), float(s[7]) ]
+    return [ float(s[1]), float(s[2]), float(s[3]), float(s[4]), float(s[5]), float(s[6]), float(s[7]), float(s[8]) ]
 
 def pollCompass():
     m = "C "
