@@ -87,6 +87,9 @@ server_socket.listen(1)
 
 read_list = [server_socket]
 
+angleWindup = 0
+lastRawAngle = 0
+
 while robot.step(TIME_STEP) != -1:
 
     # # print(robot_node.getPosition())
@@ -97,6 +100,20 @@ while robot.step(TIME_STEP) != -1:
     angle = math.acos(( R[0] + R[4] + R[8] - 1)/2) / math.pi * 180
     angle *= -y
     
+
+    # Anytime raw angle is negative, add 360
+    # Then, if raw angle ever decreases from one instance to next by more than 180 deg, add 360 to sum
+    #       or if range angle increases by more than 180 deg, subtract 360 from sum
+
+    if angle < 0:
+        angle += 360
+    if angle - lastRawAngle < -180: 
+        angleWindup += 360
+    elif angle - lastRawAngle > 180:
+        angleWindup -= 360
+    lastRawAngle = angle
+    angle += angleWindup
+
     m = ""
     for sensor in sensors:
         reading = sensor.getValue()
