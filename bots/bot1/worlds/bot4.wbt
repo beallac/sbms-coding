@@ -1,0 +1,60 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.1407786981627916 0.9532364882457349 0.26743514283004816 4.0717445126213665
+  position -0.7109149408385552 0.4866706273914597 -0.4285872885053648
+  follow "Khepera"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.25 0.25
+  wallHeight 0.05
+}
+DEF MY_ROBOT Khepera1 {
+  hidden position_0_0 2.96269393598082e-13
+  hidden position_0_1 2.6161022221458926e-13
+  hidden linearVelocity_0 6.1421991859088826e-15 -1.3922608639490102e-15 4.157493340359094e-15
+  hidden angularVelocity_0 8.499082178854341e-13 8.559991992771822e-15 2.8320367565579584e-12
+  hidden translation_1 -0.026 0.0075 0
+  hidden rotation_1 1 0 0 2.657779999999411
+  hidden linearVelocity_1 -1.3285460598827187e-14 -5.235484213468781e-16 6.417663763623087e-15
+  hidden angularVelocity_1 8.487798601369761e-13 1.1719632248618255e-12 1.4358572230791468e-12
+  hidden translation_2 0.026 0.0075 0
+  hidden rotation_2 1 0 0 2.7159899999994805
+  hidden linearVelocity_2 1.140538275035301e-14 -2.1989020150457535e-15 6.34968101891567e-15
+  hidden angularVelocity_2 8.490357714668262e-13 -1.6291191517898088e-12 2.8717524471675534e-12
+  translation -1.9292885148294223e-12 -2.0843081249182285e-05 0.42999999999970506
+  rotation -0.4882240906701085 -4.945565695855659e-07 0.872718303514428 3.1252697082443895e-07
+  controller "motors_only"
+  supervisor TRUE
+}
+WoodenBox {
+  translation 0.03 0.051 -0.22
+  rotation 1 0 0 1.5708
+  name "wooden box(3)"
+  size 0.54 0.15 0.025
+}
+WoodenBox {
+  translation -0.16 0.018 0.101483
+  rotation 1 0 0 0.1308996938995747
+  name "wooden box(1)"
+  size 0.15 0.025 0.5
+}
+WoodenBox {
+  translation 0.223 0.082 0.0936515
+  rotation 1 0 0 -0.1309
+  name "wooden box(2)"
+  size 0.15 0.025 0.5
+}
+WoodenBox {
+  translation 0.03 0.114 0.41
+  rotation 1 0 0 1.5708
+  name "wooden box(4)"
+  size 0.54 0.15 0.025
+}

@@ -56,7 +56,7 @@ def pollCompass():
     sock.sendall(b)
 
     # Add sleep here
-    time.sleep(0.05)
+    time.sleep(0.1)
 
     readable, writable, errored = select.select([sock], [], [], .01)
 
