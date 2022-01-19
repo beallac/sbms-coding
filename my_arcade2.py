@@ -28,27 +28,3 @@ def main():
     arcade.run()
 
 main()
-
-
-# #-----------------------------------------------------
-# from pynput import keyboard
-
-# def on_press(key):
-#     global personX, personY
-
-#     if key == keyboard.Key.up:
-#         personY += 1
-
-#     if key == keyboard.Key.down:
-#         personY -= 1
-
-#     if key == keyboard.Key.right:
-#         personX += 1
-
-#     if key == keyboard.Key.left:
-#         personX -= 1
-
-# listener = keyboard.Listener(on_press=on_press)
-# listener.start()
-
-
