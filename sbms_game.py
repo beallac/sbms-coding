@@ -25,7 +25,16 @@ class Grid():
             for s in ss:
                 if s:
                     if s[0] == '1':
-                        shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, arcade.csscolor.BLACK)
+                        # shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, arcade.csscolor.BLACK)
+                        shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, (0, 0, 0))
+                        self.maze.append(shape)
+                    elif s[0] == '2':   # Use for horizontal surfaces
+                        # shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, arcade.csscolor.BLACK)
+                        shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, (0, 0, 2))
+                        self.maze.append(shape)
+                    elif s[0] == '3':   # Use for vertical surfaces
+                        # shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, arcade.csscolor.BLACK)
+                        shape = arcade.create_rectangle_filled(x, y, x_inc, y_inc, (0, 0, 3))
                         self.maze.append(shape)
                 
                 x += x_inc
