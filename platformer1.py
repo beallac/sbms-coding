@@ -93,7 +93,7 @@ class GamePlayView(arcade.View):
         # Set wall 
         # Any other layers here. Array index must be a layer.
         try:
-            self.wall_list = self.tile_map.sprite_lists["Wallsx"]
+            self.wall_list = self.tile_map.sprite_lists["Walls"]
         except:
             print("\n\n\n***** Layer name does not exist ******\n\n\n")
 
