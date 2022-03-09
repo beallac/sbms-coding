@@ -107,3 +107,62 @@ class Explosion(arcade.Sprite):
             self.remove_from_sprite_lists()
 
 
+
+class SpriteAnimated(arcade.Sprite):
+
+    def __init__(self, spritesheet, columns, grid_size, count):
+        super().__init__()
+
+        # Start at the first frame
+        self.current_texture = 0
+        self.count = count
+        self.textures = arcade.load_spritesheet(spritesheet, grid_size, grid_size, columns, count)
+        self.set_texture(self.current_texture)
+
+    def update(self):
+
+        # Update to the next frame of the animation. If we are at the end
+        # of our frames, then delete this sprite.
+        self.current_texture += 1
+        self.set_texture(self.current_texture % self.count)
+
+
+
+        # enemies_layer = self.tile_map.object_lists[LAYER_NAME_ENEMIES]
+        # for my_object in enemies_layer:
+        #     cartesian = self.tile_map.get_cartesian(my_object.shape[0], my_object.shape[1])
+        #     enemy_type = my_object.properties['type']
+        #     if enemy_type == "zombie":
+        #         enemy = arcade.Sprite("resources/tank.png", scale = SPRITE_SCALING)
+        #     if enemy_type == "robot":
+        #         enemy = arcade.Sprite("resources/tank.png", scale = SPRITE_SCALING)
+        #     enemy.center_x = cartesian[0] * TILE_SCALING * self.tile_map.tile_width
+        #     enemy.center_y = (cartesian[1] + 1) * TILE_SCALING * self.tile_map.tile_height
+        #     if "boundary_left" in my_object.properties:
+        #         enemy.boundary_left = my_object.properties["boundary_left"]
+        #     if "boundary_right" in my_object.properties:
+        #         enemy.boundary_right = my_object.properties["boundary_right"]
+        #     if "change_x" in my_object.properties:
+        #         enemy.change_x = my_object.properties["change_x"]
+        #     self.scene.add_sprite(LAYER_NAME_ENEMIES, enemy)
+
+
+
+        # self.scene.update(
+        #     [LAYER_NAME_ENEMIES],
+        # )
+
+        # # See if the enemy hit a boundary and needs to reverse direction.
+        # for enemy in self.scene[LAYER_NAME_ENEMIES]:
+        #     if (
+        #         enemy.boundary_right
+        #         and enemy.right > enemy.boundary_right
+        #         and enemy.change_x > 0
+        #     ):
+        #         enemy.change_x *= -1
+        #     if (
+        #         enemy.boundary_left
+        #         and enemy.left < enemy.boundary_left
+        #         and enemy.change_x < 0
+        #     ):
+        #         enemy.change_x *= -1
